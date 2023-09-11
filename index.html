@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="gg">
+        <p id="demo">you have an arry of 10 random numbers, choose what you want to do</p>
+        <p>to print numbers</p>
+        <button type="button" onclick="printNumbers()">press here</button>
+        <p>to print numbers and calculate the sum of even ones only</p>
+        <button type="button" onclick="sumNumbers()">press here</button>
+        <p>to print sum of numbers with index smaller than 5</p>
+        <button type="button" onclick="sum5()">press here</button>
+        <p>to print object details</p>
+        <button id="btn" type="button" onclick="printIdDeatails1()">press here</button>
+        <!-- <p>to print object details one by one</p>
+        <button id="btn" type="button" onclick="printIdDeatails2()">press here</button> -->
+    </div>
+
+    <p id="demo"></p>
+
+
+    <script>
+
+
+        var arr = [];
+        var object = {
+            id: 1,
+            firstName: "Batool",
+            age: 32,
+            Email: "ba.habeeb92@gmail.com"
+        };
+
+        while (arr.length < 10) {
+            let r = Math.floor(Math.random() * 100) + 1;
+            if (arr.indexOf(r) === -1)
+                arr.push(r);
+        }
+
+        function printNumbers() {
+
+            for (let index = 0; index < arr.length; index++) {
+                const element = arr[index];
+                document.write(element + " ");
+                console.log(element + " ")
+            }
+        }
+
+        function sumNumbers() {
+            let element = 0;
+            for (let index = 0; index < arr.length; index++) {
+                if (arr[index] % 2 == 0)
+                    element += arr[index];
+                console.log(arr[index] + " ")
+                document.write(arr[index] + "</br>");
+
+            }
+            console.log("sum=" + element);
+            document.write("sum=" + element);
+        }
+
+        function sum5() {
+            let element = 0;
+            for (let index = 0; index < arr.length; index++) {
+                if (index < 5)
+                 element += arr[index];
+                  console.log(arr[index] + " ");
+                  document.write(arr[index] + "</br>");
+
+            }
+            console.log("sum=" + element);
+            document.write("sum=" + element);
+        }
+
+        function printIdDeatails1() {
+
+          
+            document.getElementById("demo").innerHTML = object.id +"</br>" +object.firstName
+             +"</br>"+object.age+"</br>" + object.Email;
+             console.log(object);
+        }
+
+       
+    </script>
+
+</body>
+
+</html>
